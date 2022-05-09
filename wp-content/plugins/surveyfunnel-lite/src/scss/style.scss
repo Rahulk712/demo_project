@@ -1,0 +1,1056 @@
+@font-face {
+    font-family: 'ApercuPro';
+    font-weight: normal;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: ApercuPro;
+    font-weight: bold;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ApercuPro;
+    font-weight: 500;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Medium.otf") format("opentype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.picker {
+    position: relative;
+}
+
+.popover {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    border-radius: 9px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+
+.datePickerInput {
+    background: teal;
+    color: white;
+}
+
+.responseDataViewer {
+    display: flex;
+    align-items: center;
+}
+//build css
+
+.surveyfunnel-lite-root{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.surveyfunnel-lite-build-container {
+	display: grid;
+	grid-template-columns:572px 1fr;
+    font-family: 'ApercuPro';
+    color: #495560;
+}
+
+.surveyfunnel-lite-build-container-menu{
+    background-color: #F6F8FA;
+    border-right: 1px solid #d2dae2;
+    .surveyfunnel-lite-build-eles {
+        overflow: auto;
+        // height: calc(100vh - 108px);
+        height: calc(100vh - 180px);
+
+        .surveyfunnel-lite-build-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #d2dae2;
+            padding-left: 20px;
+            height: 108px;
+            p{
+                margin: 0;
+                color: #626F7D;
+                font-size: 16px;
+            }
+            h2{
+                margin: 0;
+                font-size: 24px;
+            }
+        }
+    
+         .surveyfunnel-lite-build-elements {
+            padding-left: 20px;
+            padding-bottom: 20px;
+             .surveyfunnel-lite-build-elements_start, .surveyfunnel-lite-build-elements_content,  .surveyfunnel-lite-build-elements_results{
+                margin-top: 20px;
+                h3{
+                    font-size: 20px;
+                    margin: 0;
+                }
+                .surveyfunnel-lite-build-elements_container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 10px;
+                    .surveyfunnel-lite-build-elements_box{
+                        cursor: move;
+                        height: 66px;
+                        width: 256px;
+                        background-color: #FFFFFF;
+                        box-shadow: 0px 4px 1px rgb(33 30 30 / 4%);
+                        border-radius: 9px;
+                        margin: 0 10px 10px 0;
+                        display: flex;
+                        align-items:center;
+                        padding-left: 10px;
+                        img{
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                        p{
+                            margin-left: 15px;
+                        }
+                    }
+                }
+    
+            }
+    
+        }
+
+    }
+    .surveyfunnel-lite-build-elements-save{
+
+        border-top: 1px solid #d2dae2;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 40px;
+        button{
+            background-color: #0F4C81;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 9px;
+        }
+
+    }
+
+}
+
+.surveyfunnel-lite-build-START_ELEMENTS-img{
+    background-color: #FFE7F5;
+}
+.surveyfunnel-lite-build-CONTENT_ELEMENTS-img{
+    background-color: #E2EDFF;
+}
+.surveyfunnel-lite-build-RESULT_ELEMENTS-img{
+    background-color: #F4F4D5;
+}
+.surveyfunnel-lite-build-FORMFIELDS_ELEMENTS-img{
+    background-color: #E2EDFF;
+}
+
+.surveyfunnel-lite-build-content{
+    overflow: auto;
+    height: calc(100vh - 108px);
+    .surveyfunnel-lite-build-content-title-container{
+        height: 108px;
+        padding-left: 20px;
+        h2{
+            display: inline-block;
+            margin: 20px 10px 10px 0;
+        }
+        .surveyfunnel-lite-build-content-title-edit{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            img{
+                width: 20px;
+            }
+        }
+        p{
+            background-color: #687AE2;
+            margin: 0;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius:99px;
+        }
+    }
+    .surveyfunnel-lite-dropboard{
+        margin-left: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 9px;
+        margin-right: 20px;
+        h2{
+            margin: 10px 0;
+        
+        }
+        .cardBox{
+            border-radius: 9px;
+            .surveyfunnel-lite-cardbox-title{
+                display: grid;
+                grid-template-columns: 30px 1fr;
+                word-break:break-word;
+            }
+            h3{
+                margin: 0 10px;
+                display: inline-block;
+            }
+            .surveyfunnel-lite-cardBox-btn{
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                img{
+                    width: 15px;
+                }
+            }
+
+        }
+    }
+}
+.surveyfunnel-lite-card-area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .surveyfunnel-lite-cardbox-number {
+        padding: 22px 30px;
+        background: white;
+        border-radius: 9px;
+        margin-right: 10px;
+    }
+}
+.cardBox {
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+}
+.surveyfunnel-lite-cb-nav-container{
+    font-family: 'ApercuPro';
+    font-weight: 500;
+    border-bottom: 1px solid #d2dae2;
+    background: #fff;
+    display:flex;
+    height:108px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    .surveyfunnel-lite-back{
+        img{
+            width: 6px;
+            margin-right: 5px;
+        }
+        a{
+            color: #0F4C81;
+        }
+    }
+    ul{
+        display:flex;
+        list-style-type: none;
+        align-items: center;
+        li{
+            margin:0 10px;
+            a{
+                text-decoration: none;
+                color: #626F7D;
+
+            }
+            a:focus, a:hover{
+                color: #0F4C81;
+            }
+
+        }
+    }
+    button{
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 9px;
+    }
+}
+.surveyfunnel-lite-button-loading::after {
+	content: "";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	margin-left: 7px;
+	border: 4px solid transparent;
+	border-top-color: #ffffff;
+	border-bottom-color: #ffffff;
+	border-radius: 50%;
+	animation: button-loading-spinner 1s ease infinite;
+}
+  
+@keyframes button-loading-spinner {
+	from {
+	  transform: rotate(0turn);
+	}
+  
+	to {
+	  transform: rotate(1turn);
+	}
+}
+
+// Edit modal pop up
+.modalOverlay{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    .modalContent-navbar{
+        background-color: #FFFFFF;
+        width: 95vw;
+        border-bottom: 1px solid #d2dae2;
+        padding: 0 40px;
+        border-radius: 9px 9px 0 0;
+        height: 96px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        h2{
+            margin: 0;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #626F7D;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    .modalContent-footer {
+        background-color: #FFFFFF;
+        width: 95vw;
+        border-top: 1px solid #d2dae2;
+        padding: 0 40px;
+        border-radius: 0 0 9px 9px;
+        height: 96px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        button {
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 9px;
+        }
+        .modalContent-footer-primary-button {
+            background: #0F4C81;
+        }
+        .modalContent-footer-secondary-button {
+            background: #9daec7;
+        }
+    }
+    .modalContent {
+        overflow-y: scroll;
+        background: white;
+        height: calc(100vh - 108px);
+        width: 95vw;
+        display: grid;
+        grid-template-columns: 1.5fr 3fr;
+        margin-bottom: 20px;
+        .modalContent-single {
+            padding: 0 40px 20px 40px;
+        }
+        .modalContent-right {
+            background: white;
+            border-radius: 0 0 9px 0;
+            .modalContentMode{
+                border-bottom: 1px solid #d2dae2;
+                height: 70px;
+                padding-left: 40px;
+                display: flex;
+                align-items: center;
+                h4{
+                    margin: 0;
+                    background-color: #E1E8F0;
+                    padding: 7px;
+                    border-radius: 9px;
+                }
+            }
+            .modalContentPreview{
+                display: flex;
+                justify-content: center;
+                overflow: auto;
+                padding: 0 20px;
+                height: calc(100vh - 186px);
+                .no-preview-available{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    img{
+                        margin-bottom: 20px;
+                    }
+                }
+                .preview{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .surveyfunnel-lite-header-tabs{
+                .surveyfunnel-lite-header-tab-list{
+                    border-bottom: 1px solid #d2dae2;
+                    .tab-list-item {
+                        display: inline-block;
+                        list-style: none;
+                        margin-bottom: -1px;
+                        padding: 0.5rem 0.75rem;
+                        cursor: pointer;
+                    }
+                    
+                    .tab-list-active {
+                        border-width: 1px 1px 0 1px;
+                        border-radius: 9px 9px 0 0;
+                        border: 1px solid #d2dae2;
+                        border-bottom: 1px solid white;
+                    }
+                }
+                .surveyfunnel-lite-header-tab-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    overflow: auto;
+                    padding: 0 20px;
+                    height: calc(100vh - 186px);
+                    .cardBox{
+                        margin-bottom: 20px;
+                    }
+                    .no-preview-available{
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        flex-direction: column;
+                        img{
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .preview{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .surveyfunnel-lite-dropboard{
+                        margin-left: 20px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        border-radius: 9px;
+                        margin-right: 20px;
+                        width: 100%;
+                        h2{
+                            margin: 10px 0;
+                        
+                        }
+                        .cardBox{
+                            border-radius: 9px;
+                            .surveyfunnel-lite-cardbox-title{
+                                display: grid;
+                                grid-template-columns: 30px 1fr;
+                                word-break:break-word;                            }
+                            h3{
+                                margin: 0 10px;
+                                display: inline-block;
+                            }
+                            .surveyfunnel-lite-cardBox-btn{
+                                border: none;
+                                background-color: transparent;
+                                cursor: pointer;
+                                img{
+                                    width: 15px;
+                                }
+                            }
+                
+                        }
+                    }
+                }
+            }
+
+        }
+        
+        .modalContent-left {
+            background: #F0F2F5;
+            border-right: 1px solid #d2dae2;
+            border-radius: 0 0 0 9px;
+            .modalContent-left-fields{
+                overflow: auto;
+                padding: 0 40px 20px 40px;
+                height: calc(100vh - 180px);
+				.modalComponentPrivacyPolicy, .showScoreOnResultPage {
+					label {
+						cursor: pointer;
+						width: 50px;
+						height: 20px;
+						background: grey;
+						display: block;
+						border-radius: 100px;
+						position: relative;
+					}
+					
+					label:after {
+						content: '';
+						position: absolute;
+						top: 5px;
+						left: 5px;
+						width: 10px;
+						height: 10px;
+						background: #fff;
+						border-radius: 90px;
+						transition: 0.3s;
+					}
+					input{
+						display: none;
+					}
+					input:checked + label {
+						background: #4CAF50;
+					}
+					
+					input:checked + label:after {
+						left: calc(100% - 5px);
+						transform: translateX(-100%);
+					}
+					
+					label:active:after {
+						width: 50px;
+					}
+				}
+                .modalComponentTitle, .modalComponentDescription, .modalComponentButton, .modalComponentAnswers, .modalComponentButtonLabel{
+                    margin-top: 20px;
+                    h3{
+                        margin: 0;
+                    }
+                    input, textarea{
+                        width: 100%;
+                        height: 70px;
+                        border-radius: 9px;
+                        border: 1px solid #d2dae2;
+                        margin-top: 17px;
+                        padding: 0 20px 0 20px;
+                    }
+                    input:focus{
+                        outline: none;
+                    }
+                    textarea {
+                        font-family: 'ApercuPro';
+                        padding: 20px;
+                        outline: none;
+                    }
+    
+                }
+                .modalComponentAnswers{
+                    input{
+                        width: calc(100% - 32px);
+                    }
+                    button{
+                        border: none;
+                        background-color: transparent;
+                        cursor: pointer;
+                        img{
+                            width: 20px;
+                        }
+                    }
+                    .modalAnswersAdd{
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+                        color: #0F4C81;
+                        font-weight: bold;
+                        img{
+                            padding: 10px;
+                            width: 40px;
+                            border-radius: 9px;
+                            margin-right: 10px;
+                            background-color: #E1E8F0;
+                        }
+                    }
+                }
+                .modalComponentFormFields{
+                    margin-top: 45px;
+                    h3{
+                        margin: 0;
+                    }
+                    input[type="text"]{
+                        width: 100%;
+                        height: 70px;
+                        border-radius: 9px;
+                        border: 1px solid #d2dae2;
+                        margin-top: 10px;
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        outline:none;
+                    }
+                    input[type="checkbox"]{
+                        height: 20px;
+                        width: 40px;
+                    }
+                    .surveyfunnel-lite-required-field-container{
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                .surveyfunnel-lite-form-elements_content{
+                    margin-top: 20px;
+                    h3{
+                        margin: 0;
+                    }
+                    .surveyfunnel-lite-form-elements_container{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .surveyfunnel-lite-form-elements_box{
+                            cursor: move;
+                            height: 66px;
+                            width: 256px;
+                            background-color: #FFFFFF;
+                            box-shadow: 0px 4px 1px rgb(33 30 30 / 4%);
+                            border-radius: 9px;
+                            margin: 5px;
+                            display: flex;
+                            align-items:center;
+                            padding-left: 10px;
+                            img{
+                                padding: 5px;
+                                border-radius: 5px;
+                            }
+                            p{
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modalComponentSaveButton{
+                border-top: 1px solid #d2dae2;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding-right: 40px;
+                button{
+                    background-color: #0F4C81;
+                    border: none;
+                    color: white;
+                    padding: 12px 28px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 9px;
+                }
+            }
+
+        }
+    }
+    .modalComponentEdit{
+        background: #F0F2F5;
+        border-radius: 9px;
+        min-width: 600px;
+        position: fixed;
+        top: 20px;
+        .modalComponentNav{
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 9px 9px 0 0;
+            button{
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: #626F7D;
+                font-size: 20px;
+                font-weight: bold;
+                outline: none;
+            }
+        }
+        .modalComponentEditFields{
+            padding: 20px;
+            h3{
+                margin: 0;
+            }
+            input{
+                width: 100%;
+                height: 70px;
+                border-radius: 9px;
+                border: 1px solid #d2dae2;
+                margin-top: 10px;
+                padding-left: 20px;
+            }
+            input:focus{
+                outline: none;
+            }
+
+        }
+        .modalComponentEditButtons{
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+            button{
+                background-color: #0F4C81;
+                border: none;
+                color: white;
+                padding: 12px 28px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 9px;
+            }
+        }
+    }
+
+}
+
+//design css
+.surveyfunnel-lite-design-container{
+	display: grid;
+	grid-template-columns:550px 1fr;
+    font-family: 'ApercuPro';
+    color: #495560;
+}
+.surveyfunnel-lite-design-setting-container{
+	border-right: 1px solid #d2dae2;
+    background-color: #F6F8FA;
+    height: calc(100vh - 108px);
+    .surveyfunnel-lite-design-setting-fields{
+        overflow: auto;
+        height: calc(100vh - 196px);
+        .surveyfunnel-lite-design-elements{
+            border-bottom: 1px solid #d2dae2;
+            padding-bottom: 20px;
+            padding: 0 0 20px 20px;
+            h2{
+                margin: 20px 0 0 0;
+            }
+            .surveyfunnel-lite-font-family-container{
+                select{
+                    height: 66px;
+                    width: 275px;
+                    border-radius: 9px;
+                    border: 0;
+                    box-shadow: 0 6px 12px rgb(0 0 0 / 15%);
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+                    background-repeat: no-repeat;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background-position-x: 245px;
+                    background-position-y: 25px;
+                    padding-left: 20px;
+                }
+                select:focus{
+                    outline: none;
+                }
+            }
+    
+            .surveyfunnel-lite-design-color-container{
+                display: flex;
+                flex-wrap: wrap;
+                .surveyfunnel-lite-design-color-type{
+                    .surveyfunnel-lite-color-box{
+                        width: 235px;
+                        height: 80px;
+                        display: flex;
+                        justify-content: center;
+                        border-radius: 5px;
+                        padding-top: 2px;
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                        cursor: pointer;
+                        margin-right: 20px;
+                        .surveyfunnel-lite-color-value{
+                            background-color: #FFFFFF;
+                            height: 40px;
+                            width: 95%;
+                            background-color: #FFFFFF;
+                            border-radius: 5px;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+            .surveyfunnel-lite-opacity-section{
+                padding-right: 20px;
+                .surveyfunnel-lite-opacity-percentage{
+                    display: flex;
+                    justify-content: space-between;
+                }
+                input[type=range] {
+                    height: 25px;
+                    -webkit-appearance: none;
+                    margin: 10px 0;
+                    width: 100%;
+                    background-color: #F6F8FA;
+                  }
+                  input[type=range]:focus {
+                    outline: none;
+                  }
+                  input[type=range]::-webkit-slider-runnable-track {
+                    width: 100%;
+                    height: 1px;
+                    cursor: pointer;
+                    animate: 0.2s;
+                    box-shadow: 0px 0px 0px #000000;
+                    background: #0F4C81;
+                    border-radius: 1px;
+                    border: 1px solid #000000;
+                  }
+                  input[type=range]::-webkit-slider-thumb {
+                    box-shadow: 0px 0px 0px #000000;
+                    border: 0px solid #000000;
+                    height: 19px;
+                    width: 18px;
+                    border-radius: 13px;
+                    background: #0F4C81;
+                    cursor: pointer;
+                    -webkit-appearance: none;
+                    margin-top: -9.5px;
+                  }
+                  input[type=range]:focus::-webkit-slider-runnable-track {
+                    background: #0F4C81;
+                  }
+                  input[type=range]::-moz-range-track {
+                    width: 100%;
+                    height: 1px;
+                    cursor: pointer;
+                    animate: 0.2s;
+                    box-shadow: 0px 0px 0px #000000;
+                    background: #0F4C81;
+                    border-radius: 1px;
+                    border: 1px solid #000000;
+                  }
+                  input[type=range]::-moz-range-thumb {
+                    box-shadow: 0px 0px 0px #000000;
+                    border: 0px solid #000000;
+                    height: 19px;
+                    width: 18px;
+                    border-radius: 13px;
+                    background: #0F4C81;
+                    cursor: pointer;
+                  }
+                  input[type=range]::-ms-track {
+                    width: 100%;
+                    height: 1px;
+                    cursor: pointer;
+                    animate: 0.2s;
+                    background: transparent;
+                    border-color: transparent;
+                    color: transparent;
+                  }
+                  input[type=range]::-ms-fill-lower {
+                    background: #0F4C81;
+                    border: 1px solid #000000;
+                    border-radius: 2px;
+                    box-shadow: 0px 0px 0px #000000;
+                  }
+                  input[type=range]::-ms-fill-upper {
+                    background: #0F4C81;
+                    border: 1px solid #000000;
+                    border-radius: 2px;
+                    box-shadow: 0px 0px 0px #000000;
+                  }
+                  input[type=range]::-ms-thumb {
+                    margin-top: 1px;
+                    box-shadow: 0px 0px 0px #000000;
+                    border: 0px solid #000000;
+                    height: 19px;
+                    width: 18px;
+                    border-radius: 13px;
+                    background: #0F4C81;
+                    cursor: pointer;
+                  }
+                  input[type=range]:focus::-ms-fill-lower {
+                    background: #0F4C81;
+                  }
+                  input[type=range]:focus::-ms-fill-upper {
+                    background: #0F4C81;
+                  }
+            }
+            .surveyfunnel-lite-img-upload-container{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                padding-right: 20px;
+            }
+            .surveyfunnel-lite-custom-file-upload{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 12px 28px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 9px;
+                min-width: 160px;
+                input{
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .surveyfunnel-lite-design-settings-save{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+        margin-right: 20px;
+        button{
+            background-color: #0F4C81;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 9px;
+        }
+    }
+}
+.image-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-disabled {
+	opacity: 0.7 !important;
+	button {
+		cursor: not-allowed !important;
+	} 
+}
+
+.main-tab-container {
+	.tab-list {
+		max-height: calc(100vh - 300px);
+		overflow: auto;
+	}
+}
+
+.selectedBackgroundImage {
+	margin: 20px 0px;
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+	padding-right: 20px;
+
+	div {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-right: 10px;
+		width: calc(100% - 100px);
+	}
+
+	button {
+		background: #F44336;
+		color: white;
+		padding: 8px 19px;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+	}
+}
+
+.modalComponentMandatory {
+	label {
+		cursor: pointer;
+		width: 50px;
+		height: 20px;
+		background: grey;
+		display: block;
+		border-radius: 100px;
+		position: relative;
+	}
+	
+	label:after {
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 10px;
+		height: 10px;
+		background: #fff;
+		border-radius: 90px;
+		transition: 0.3s;
+	}
+	input{
+		display: none;
+	}
+	input:checked + label {
+		background: #4CAF50;
+	}
+	
+	input:checked + label:after {
+		left: calc(100% - 5px);
+		transform: translateX(-100%);
+	}
+	
+	label:active:after {
+		width: 50px;
+	}
+}

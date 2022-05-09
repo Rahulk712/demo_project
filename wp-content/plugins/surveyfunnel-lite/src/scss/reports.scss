@@ -1,0 +1,353 @@
+@font-face {
+    font-family: 'ApercuPro';
+    font-weight: normal;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: ApercuPro;
+    font-weight: bold;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: ApercuPro;
+    font-weight: 500;
+    src: url("../../assets/fonts/Apercu-Font/Apercu\ Pro\ Medium.otf") format("opentype");
+}
+
+.surveyfunnel-lite-reports-body{
+    background-color: #F0F2F5;
+    height: 100vh;
+    .surveyfunnel-lite-reports-container{
+        width: 1315px;
+        margin: auto;
+        font-family: 'ApercuPro';
+        .datePicker{
+            position: absolute;
+            top: 128px;
+            right: calc(calc(100vw - 1275px)/2);
+            display: flex;
+            background-color: #fff;
+            padding: 13px 20px;
+            border-radius: 9px;
+            box-shadow: 0 3px 4px rgb(0 0 0 / 15%);
+
+            .rdt{
+                input{
+                    font-family: 'ApercuPro';
+                    border:none;
+                    width: 130px;
+                    padding: 0 10px;
+                    outline: none;
+                }
+                .rdtPicker{
+                    right: 7%;
+                    top: 35px;
+                }
+            }        
+        }
+        .surveyfunnel-lite-header-tabs{
+            .surveyfunnel-lite-header-tab-list{
+                margin: 0;
+                padding-inline-start: 0;
+                padding-top: 20px;
+                li:first-child{
+                    border-radius: 9px 0 0 9px;
+                }
+                li:nth-child(2){
+                    border-radius: 0 9px 9px 0;
+                }
+                .tab-list-item{
+                    display: inline-block;
+                    list-style: none;
+                    margin-bottom: -1px;
+                    padding: 13px 20px;
+                    cursor: pointer;
+                    background-color: #FFFFFF;
+                }
+                .tab-list-active{
+                    background-color: #E1E8F0;
+                    box-shadow: 0 3px 4px rgb(0 0 0 / 15%);
+                }
+            }
+            .surveyfunnel-lite-header-tab-content{
+                overflow-y: auto;
+                overflow-x: hidden;
+                height: calc(100vh - 200px);
+                margin-top: 20px;
+                .insightsOverview{
+                    .insightBox:first-child{
+                        border-radius: 9px 0 0 9px;
+                    }
+                    .insightBox:nth-child(3){
+                        border-radius: 0 9px 9px 0;
+                    }
+                    .insightBox{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        float: left;
+                        width: 432px;
+                        background-color: #FFFFFF;
+                        height: 162px;
+                        border-right: 1px solid #E0E0E0;
+                        p{
+                            margin: 0;
+                            padding: 0;
+                            font-size: 36px;
+                        }
+                        small {
+                            color: #9DA9B4;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .insights-container{
+                    clear: both;
+                    .surveyfunnel-lite-insight-summary-heading{
+                        h3{
+                            color: #626F7D;
+                            height: 16px;
+                            margin: 0;
+                            padding: 20px 0;
+
+                        }
+                    }
+                    .insights-summary-single{
+                        display: flex;
+                        flex-direction: column;
+                        background-color: #ffffff;
+                        margin: 20px 0;
+                        padding: 0 20px;
+                        border-radius: 9px;
+                        word-break: break-word;
+                        .insights-data{
+                            padding: 10px;
+                            background-color: #E9F4FD;
+                            display: block;
+                            max-width: 202px;
+                            border-radius: 9px;
+                            color: #626F7D;
+                            p{
+                                margin:0;
+                            }
+                        }
+                        .insights-answers{
+                            color: #626F7D;
+                            .insightAnswerBlock{
+                                display: flex;
+                                margin-bottom: 20px;
+                                .surveyfunnel-lite-insight-answer-box{
+                                    width: 1046px;
+                                    display: flex;
+                                    align-items: center;
+                                    border: 1px solid #E0E0E0;
+                                    border-radius: 9px;
+                                    padding: 14px 20px;
+                                    margin-right: 20px;
+                                    background-color: #F0F2F5;
+                                    word-break: break-word;
+                                }
+                                p {
+                                    span {
+                                        margin: 0px 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .responseDataViewer{
+                    margin-top: 20px;
+                    .responseSelector{
+                        p{
+                            margin-top: 0;
+                        }
+                        .selectionElementsContainer{
+                            background-color: #ffffff;
+                            padding: 20px;
+                            border-radius: 9px;
+                            margin-right: 20px;
+                            height: calc(100vh - 290px);
+                            .selectionElements{
+                                height: calc(100vh - 400px);
+                                overflow: overlay!important;
+                                overflow: auto;
+                                .selectionElement{
+                                    margin-bottom: 20px;
+                                    .selectElement{
+                                        display: grid;
+                                        grid-template-columns: 30px 1fr;
+                                        cursor: pointer;
+                                        width: 378px;
+                                        background-color: transparent;
+                                        padding: 20px;
+                                        border-radius: 9px;
+                                        &:hover {
+                                            background: #F0F2F5;
+                                        }
+                                        input{
+                                            width: 20px;
+                                            height: 20px;
+                                        }
+                                        .selectElement-title{
+                                            padding-left: 10px;
+                                            word-break:break-word;
+                                            h3{
+                                                margin: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .surveyfunnel-lite-export-csv-btn{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                position: relative;
+                                bottom: 0;
+                                height: 93px;
+                                button{
+                                    background-color: #0F4C81;
+                                    border: none;
+                                    color: white;
+                                    padding: 12px 28px;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    display: inline-block;
+                                    font-size: 16px;
+                                    margin: 4px 2px;
+                                    cursor: pointer;
+                                    border-radius: 9px;
+                                    width: 100%;
+                                }
+        
+                            }
+                        }
+                        
+
+                    }
+                    .responsePreview{
+                        p{
+                            margin-top: 0;
+                            img{
+                                width: 15px;
+                            }
+                        }
+                        .surveyfunnel-lite-preview-container{
+                            background-color: #ffffff;
+                            padding: 20px;
+                            border-radius: 9px;
+                            margin-right: 20px;
+                            height: calc(100vh - 290px);
+                            overflow: auto;
+							position: relative;
+							.surveyfunnel-lite-no-response {
+								margin: 0;
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%, -50%);
+							}
+                            .currentReportQuestion{
+                                word-break: break-word;
+                                h2{
+                                    margin: 0 0 20px 0;
+                                }
+                            }
+                            .currentReportAnswer{
+                                width: 800px;
+                                padding: 18px 20px;
+                                background-color: #F0F2F5;
+                                border-radius: 9px;
+                                margin-bottom: 20px;
+                                word-break: break-word;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+
+}
+
+.selected {
+    background: #F0F2F5 !important;
+}
+
+.NRR {
+    margin-top: 45px;
+    text-align: center;
+    background: #fff;
+    .NRR-container {
+        padding: 50px;
+        .NRR-headline {
+            margin-bottom: 38px;
+
+            p {
+                margin: 0;
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
+$medium-size : 1400px;
+@media screen and (max-width: $medium-size) {
+    .surveyfunnel-lite-reports-body{
+        .surveyfunnel-lite-reports-container{
+            width: 900px;
+            .datePicker{
+                right: calc(calc(100vw - 860px)/2);
+            }
+            .surveyfunnel-lite-header-tabs{
+                .surveyfunnel-lite-header-tab-content{
+                    .insightsOverview{
+                        .insightBox{
+                            width: 294px;
+                        }
+                    }
+                    .insights-container{
+                        .insights-summary-single{
+                            .insights-answers{
+                                .insightAnswerBlock{
+                                    .surveyfunnel-lite-insight-answer-box{
+                                        width: 640px;
+                                    }
+                                }
+
+
+                            }
+
+                        }
+
+                    }
+                    .responseDataViewer{
+                    
+                        .responsePreview{
+    
+                            .surveyfunnel-lite-preview-container{
+    
+                                .currentReportAnswer{
+                                    width: 400px;
+    
+                                }
+                            }
+                        }
+    
+                    }
+                }
+
+
+            }
+
+
+        }
+
+    }
+
+}
